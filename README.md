@@ -15,9 +15,12 @@ Tech stack:
  * Kubernetes(GKE)
  * Helm
  * Terraform
- * 
+ 
 
 ## Development
+
+Application is located in `app` directory.
+
 Local database deployment:
 ```
 docker run -p 5432:5432 -it -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=123456 postgres:14.5-bullseye
@@ -49,4 +52,6 @@ curl -v http://127.0.0.1:8000/select
 ```
 
 ## Deployment
+
+Infrastructure deployment files are located in `infra` directory.
 
