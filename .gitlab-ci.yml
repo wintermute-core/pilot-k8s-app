@@ -1,0 +1,34 @@
+# container image with deployment tools
+image: universaldevelopment/cicd:0.0.2
+
+variables:
+  DOCKER_HOST: tcp://docker:2376
+  DOCKER_TLS_CERTDIR: "/certs"
+  DOCKER_TLS_VERIFY: 1
+  DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+
+services:
+  - docker:20.10.16-dind
+
+before_script:
+  - docker info
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - make container
+    - docker login -u $CI_USER -p $CI_PWD
+    - make push
+  tags:
+    - docker
+
+deploy:
+  stage: deploy
+  script:
+    - gcloud auth application-default login
+    - gcloud container clusters get-credentials ${GKE_CLUSTER} --zone ${GKE_ZONE} --project ${GCP_PROJECT}
+    - make deploy-k8s
