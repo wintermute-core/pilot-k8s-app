@@ -10,13 +10,12 @@ App logic:
 
 Tech stack:
  * Go 1.18 (Pq, Fiber)
- * Postgres 14
- * Docker
- * Kubernetes(GKE)
- * Helm
- * Terraform
+ * Postgres 14+
+ * Docker 20.04+
+ * Kubernetes 1.22+ (GKE)
+ * Helm 3+
+ * Terraform 1.11+
  
-
 ## Development
 
 Application is located in `app` directory.
