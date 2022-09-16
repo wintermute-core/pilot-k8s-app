@@ -1,7 +1,6 @@
 replicaCount: 1
-
 image:
-  repository: denis256/gke-app
+  repository: denis256/k8s-app
 
 db: "host=postgres-postgresql.postgres.svc port=5432 user=postgres password=123456 dbname=postgres sslmode=disable"
 
