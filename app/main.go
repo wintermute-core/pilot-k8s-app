@@ -50,5 +50,9 @@ func selectHandler(c *fiber.Ctx) error {
 }
 
 func healthHandler(c *fiber.Ctx) error {
-	return db.Ping()
+	err := db.Ping()
+	if err != nil {
+		log.Printf("%w", err)
+	}
+	return err
 }
