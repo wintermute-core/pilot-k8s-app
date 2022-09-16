@@ -57,6 +57,11 @@ Infrastructure deployment files are located in `infra` directory:
  * `gke` - terraform scripts to deploy GKE cluster
  * `postgres` - deployment of postgres in GKE
 
+Infrastructure deployment steps:
+ * deploy GKE
+ * deploy Postgres
+ * deploy App
+
 To K8S application is deployed as a Helm chart located in `helm` directory, custom values used during deployment are located
 in file `helm-values.yaml` deployment is automated through Gitlab CI or can be done through make command `deploy-k8s`.
 

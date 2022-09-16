@@ -7,3 +7,11 @@ db: "host=postgres-postgresql.postgres.svc port=5432 user=postgres password=1234
 service:
   type: LoadBalancer
   port: 8000
+
+resources:
+   limits:
+     cpu: 500m
+     memory: 128Mi
+   requests:
+     cpu: 500m
+   memory: 128Mi
