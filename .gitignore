@@ -8,6 +8,9 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+app/k8s-app
+.idea
+
 # AWS User-specific
 .idea/**/aws.xml
 
