@@ -29,8 +29,8 @@ build:
 deploy:
   stage: deploy
   script:
-    - gcloud auth activate-service-account --key-file ${GOOGLE_APPLICATION_CREDENTIALS}
-    - gcloud container clusters get-credentials ${GKE_CLUSTER} --zone ${GKE_ZONE} --project ${GCP_PROJECT}
+    - gcloud -q auth activate-service-account --key-file ${GOOGLE_APPLICATION_CREDENTIALS}
+    - gcloud -q container clusters get-credentials ${GKE_CLUSTER} --zone ${GKE_ZONE} --project ${GCP_PROJECT}
     - make deploy-k8s
   tags:
     - docker
