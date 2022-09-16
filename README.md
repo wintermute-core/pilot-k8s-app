@@ -53,5 +53,8 @@ curl -v http://127.0.0.1:8000/select
 
 ## Deployment
 
-Infrastructure deployment files are located in `infra` directory.
+Infrastructure deployment files are located in `infra` directory:
+ * `gke` - terraform scripts to deploy GKE cluster
+ * `postgres` - deployment of postgres in GKE
 
+To K8S application is deployed as a Helm chart
