@@ -83,3 +83,4 @@ fabric.properties
 .lock.hcl
 *.tfstate
 *.lock.hcl
+*/.terraform
