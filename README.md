@@ -64,4 +64,4 @@ Infrastructure deployment steps:
 To K8S application is deployed as a Helm chart located in `helm` directory, custom values used during deployment are located
 in file `helm-values.yaml` deployment is automated through Gitlab CI or can be done through make command `deploy-k8s`.
 
-Live deployment can be accessed through: ``
+Live deployment can be accessed through: `http://34.132.36.248:8000`
