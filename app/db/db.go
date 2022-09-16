@@ -67,3 +67,35 @@ func Insert() error {
 
 	return nil
 }
+
+// Select - return data from db
+func Select() ([]interface{}, error) {
+
+	db, err := connect()
+	if err != nil {
+		return nil, err
+	}
+	defer db.Close()
+
+	rows, err := db.Query(`SELECT * FROM "data" `)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var list []interface{}
+
+	for rows.Next() {
+		var id string
+		var data string
+
+		err = rows.Scan(&id, &data)
+		if err != nil {
+			return nil, err
+		}
+
+		list = append(list, map[string]string{"id": id, "data": data})
+	}
+
+	return list, nil
+}
