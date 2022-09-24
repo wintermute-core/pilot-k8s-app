@@ -2,6 +2,7 @@ replicaCount: 1
 image:
   repository: denis256/k8s-app
 
+# For production usage, use sops or helm secrets
 db: "host=postgres-postgresql.postgres.svc port=5432 user=postgres password=123456 dbname=postgres sslmode=disable"
 
 service:
